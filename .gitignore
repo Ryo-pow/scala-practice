@@ -1,0 +1,14 @@
+# --------------------
+# Scala/sbt Build Artifacts
+# --------------------
+target/
+.bsp/
+.metals/
+.scala-build/
+
+# --------------------
+# IDE/Editor Artifacts (VS Code)
+# --------------------
+.vscode/
+# もし .vscode/extensions.json のように共有したいファイルがあれば、
+# そのファイルだけは除外対象から外すことも考えられますが、基本は除外でOKです。
