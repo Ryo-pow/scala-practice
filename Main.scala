@@ -1,23 +1,19 @@
-object AdvancedExercise {
-    def calculateSalary(hourlywage: Int,workinghours: Int) = if (workinghours > 40){
-        hourlywage * 40 + hourlywage * (workinghours -40) * 125 / 100
-    } else{
-        hourlywage * workinghours
-    }
-
-
-    def main(args: Array[String]): Unit = {
+object CollectionExercise {
+  
+  def main(args: Array[String]): Unit = {
     
-        val hourlywage = 1000
-        val workinghours = 45
-        val salary = calculateSalary(hourlywage, workinghours)
-        println(s"時給 ${hourlywage}円で ${workinghours}時間働いた総支給額 ${salary}円")
+    // 類題1: タプルの作成とアクセス
+    val itemInfo = ("Laptop", 120000, true)
 
-        val oddSquares = for {
-            i <- 1 to 10
-            if (i % 2 != 0) 
-        }yield i * i
-
-        println(s"奇数の二乗リスト： ${oddSquares}")
+    val (name, price, available) = itemInfo // タプルの要素を分解して val に格納してください
+    
+    println(s"商品名: ${name}, 価格: ${price}, 在庫: ${available}")
+    // 類題2: リストの操作とループ
+    val cities = List("Tokyo", "Osaka", "Kyoto") // List("Tokyo", ...) の形式でリストを定義してください
+    
+    // for式を使ってリストの要素を全て出力してください
+    for (city <- cities){
+      println(s"${city}を訪問")
     }
+  }
 }
