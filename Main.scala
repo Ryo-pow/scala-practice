@@ -1,25 +1,19 @@
-object VariableExercise {
+object CollectionExercise {
+  
   def main(args: Array[String]): Unit = {
     
-        val pi = 3.14159
+    // 類題1: タプルの作成とアクセス
+    val itemInfo = ("Laptop", 120000, true)
 
-        println(s"円周率:${pi}")
-
-
-
-        val companyName = "FutureTech Inc."
-
-        println(s"会社名:${companyName}")
-
-
+    val (name, price, available) = itemInfo // タプルの要素を分解して val に格納してください
     
-        println("---")
+    println(s"商品名: ${name}, 価格: ${price}, 在庫: ${available}")
+    // 類題2: リストの操作とループ
+    val cities = List("Tokyo", "Osaka", "Kyoto") // List("Tokyo", ...) の形式でリストを定義してください
     
-        // 類題2: var の定義と再代入
-        var temperature = 28        // var temperature = ???
-        println(temperature)        // println(temperature)
-        temperature = 35            // temperature = ??? // 再代入
-        println(s"${temperature}")  // println(temperature)
-    
+    // for式を使ってリストの要素を全て出力してください
+    for (city <- cities){
+      println(s"${city}を訪問")
     }
+  }
 }
