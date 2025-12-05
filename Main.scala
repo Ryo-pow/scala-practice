@@ -1,19 +1,19 @@
-object CollectionExercise {
-  
-  def main(args: Array[String]): Unit = {
-    
-    // 類題1: タプルの作成とアクセス
-    val itemInfo = ("Laptop", 120000, true)
+object HigherOrderFunctionExercise{
 
-    val (name, price, available) = itemInfo // タプルの要素を分解して val に格納してください
+  def main(args: Array[String]): Unit = {
+
+    val originalRates = List(1000, 1200, 1500, 2000)
+    val newRates = originalRates.map { rate => rate * 130/100}
     
-    println(s"商品名: ${name}, 価格: ${price}, 在庫: ${available}")
-    // 類題2: リストの操作とループ
-    val cities = List("Tokyo", "Osaka", "Kyoto") // List("Tokyo", ...) の形式でリストを定義してください
-    
-    // for式を使ってリストの要素を全て出力してください
-    for (city <- cities){
-      println(s"${city}を訪問")
-    }
+    println(s"30%増しの時給リスト: ${newRates}")
+
+    val ages = List(15, 22, 17, 35, 18, 12)
+
+    val adultAgesPlusFive = ages
+    .filter{age => age >= 18}
+
+    .map { age => age + 5}
+
+    println(s"18歳以上に５歳加算したリスト： ${adultAgesPlusFive}")
   }
 }
