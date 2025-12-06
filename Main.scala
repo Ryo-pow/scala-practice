@@ -1,29 +1,23 @@
-object OOPAdvancedExercise {
+val Pi = 3.14
 
-  class Shape {
-    def getInfo(): Unit = {
-      println("これは図形です")
+object PatternMatchingExercise {
+  case class Circle(radius: Double)
+  case class Square(side: Double)
+
+  def calculateArea(shape :Any): Double ={
+    shape match {
+      case Circle(r) => Pi * r * r
+      case Square(s) => s * s
+      case _ => 0.0
     }
   }
 
-  trait Loggable{
-    def log(message: String): Unit = {
-      println(s"[LOG] ${message}")
-    }
-  }
+  def main(args: Array[String]): Unit ={
 
-  class Rectangle(val width: Int, val height: Int) extends Shape with Loggable {
-      def area(): Int = {
-        width * height
-      }
-  }
-  
-  def main(args: Array[String]): Unit = {
+    val myCircle = Circle(5.0)
 
-    val rect = new Rectangle(width = 10, height = 5)
-
-    rect.getInfo()
-
-    println(s"面積: ${rect.area()}")
+    val mySquare = Square(4.0)
+    println(s"円の面積: ${calculateArea(myCircle)}")
+    println(s"四角の面積: ${calculateArea(mySquare)}")
   }
 }
