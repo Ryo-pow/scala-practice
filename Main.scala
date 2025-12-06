@@ -1,16 +1,29 @@
-object ClassExercise{
+object OOPAdvancedExercise {
 
-  class Book(val title: String, val author: String){
-    def printInfo(): Unit = {
-      println(s"${title}by${author}")
+  class Shape {
+    def getInfo(): Unit = {
+      println("これは図形です")
     }
   }
 
-  def main(args: Array[String]): Unit = {
-    val book1 = new Book("吾輩は猫である","夏目漱石")
-    val book2 = new Book("羅生門","芥川龍之介")
+  trait Loggable{
+    def log(message: String): Unit = {
+      println(s"[LOG] ${message}")
+    }
+  }
 
-    book1.printInfo()
-    book2.printInfo()
+  class Rectangle(val width: Int, val height: Int) extends Shape with Loggable {
+      def area(): Int = {
+        width * height
+      }
+  }
+  
+  def main(args: Array[String]): Unit = {
+
+    val rect = new Rectangle(width = 10, height = 5)
+
+    rect.getInfo()
+
+    println(s"面積: ${rect.area()}")
   }
 }
