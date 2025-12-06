@@ -1,19 +1,16 @@
-object HigherOrderFunctionExercise{
+object ClassExercise{
+
+  class Book(val title: String, val author: String){
+    def printInfo(): Unit = {
+      println(s"${title}by${author}")
+    }
+  }
 
   def main(args: Array[String]): Unit = {
+    val book1 = new Book("吾輩は猫である","夏目漱石")
+    val book2 = new Book("羅生門","芥川龍之介")
 
-    val originalRates = List(1000, 1200, 1500, 2000)
-    val newRates = originalRates.map { rate => rate * 130/100}
-    
-    println(s"30%増しの時給リスト: ${newRates}")
-
-    val ages = List(15, 22, 17, 35, 18, 12)
-
-    val adultAgesPlusFive = ages
-    .filter{age => age >= 18}
-
-    .map { age => age + 5}
-
-    println(s"18歳以上に５歳加算したリスト： ${adultAgesPlusFive}")
+    book1.printInfo()
+    book2.printInfo()
   }
 }
